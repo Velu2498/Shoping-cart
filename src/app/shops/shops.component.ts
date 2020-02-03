@@ -177,9 +177,9 @@ fun(para){
   }
 
 }
-
-
-  onchange(name,type,val){
+ c=0;
+ orgprice;
+onchange(name,type,val){
      //   console.log(name)
     console.log(name,type,val)
     let product= this.products.find((para)=>{
@@ -190,18 +190,24 @@ fun(para){
    let varientDetails=product.varientDetails.find((para)=>{
            return para.size == product.selectedVar.size && para.color == product.selectedVar.color && para.meterial == product.selectedVar.meterial 
   })
-  console.log(varientDetails)
+//   console.log(varientDetails)
   var addon =varientDetails.addOnprice
 //   console.log(addon)
-  if(name == "T-Shirt"){
-     product.basePrice=500+addon
-  }
-  if(name == "Saree"){
-     product.basePrice=5000+addon
-  }
+
+ if(this.c == 0){
+     this.orgprice=product.basePrice
+ }
+  product.basePrice=this.orgprice+addon
+//   if(name == "T-Shirt"){
+//      product.basePrice=500+addon
+//   }
+//   if(name == "Saree"){
+//      product.basePrice=5000+addon
+//   }
 //   product.basePrice=product.basePrice+addon
-  console.log(product.basePrice)
-//   console.log( document.getElementById("Saree-Meterial").getAttribute("value"))
+//   console.log(this.orgprice)
+  console.log( document.getElementById("Saree-Meterial").getAttribute("value") )
+       this.c++
 
 }
 

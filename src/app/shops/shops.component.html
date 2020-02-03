@@ -18,7 +18,7 @@
                                 <!-- <span *ngFor="let vt of  v.type"> {{vt}}</span> -->
                                 <!-- {{l.productName}}-{{v.type}} -->
                                 <b>{{v.type}} - </b>
-                                <select id="{{l.productName}}-{{v.type}}" (change)="onchange(l.productName,v.type,$event.target.value)" >
+                                <select id="{{l.productName}}-{{v.type}}" (change)="onchange(l.productName,v.type,$event.target.value) " >
                                     <!-- (change)="onchange(l.productName,v.type,$event.target.value)" -->
                                     <option  *ngFor="let vv of v.values" value="{{vv}}" >{{vv}}</option>
                                 </select> 
